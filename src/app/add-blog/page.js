@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const initialFormData = {
@@ -10,7 +11,28 @@ const initialFormData = {
 export default function AddBlog() {
   const [blogFormData, setBlogFormData] = useState(initialFormData);
 
-  console.log(blogFormData);
+  const router = useRouter()
+
+  async function handleAddBlog(){
+    const response = await fetch('/api/blog/add-new-blog', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(blogFormData)
+    })
+
+    const result = await response.json()
+
+    console.log(result)
+
+    if(result?.success){
+      setBlogFormData(initialFormData)
+      router.push("/blog-list")
+    }
+  }
+
+  // console.log(blogFormData);
   return (
     <div>
       <h1> Add a Blog </h1>
@@ -29,7 +51,7 @@ export default function AddBlog() {
         })}/>
       </div>
       <div>
-        <button>Add Blog</button>
+        <button onClick={handleAddBlog}>Add Blog</button>
       </div>
     </div>
   );
