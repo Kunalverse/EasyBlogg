@@ -19,9 +19,6 @@ export async function GET(req){
 
         const blogDetail = await Blog.find({_id: currentBlogId})
 
-        console.log("================================")
-    console.log("blogDetail :" + blogDetail[0].title)
-
 
         if(blogDetail){
             return NextResponse.json({
