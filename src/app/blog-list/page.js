@@ -1,5 +1,6 @@
 import BlogListComponent from "@/components/blog/list";
 
+
 async function fetchAllBlogs(){
     const response = await fetch(`${process.env.WEB_URL}/api/blog/get-all-blogs`, {
         method: 'GET',
