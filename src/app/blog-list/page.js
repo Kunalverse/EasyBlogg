@@ -1,7 +1,7 @@
 import BlogListComponent from "@/components/blog/list";
 
 async function fetchAllBlogs(){
-    const response = await fetch('http://localhost:3000/api/blog/get-all-blogs', {
+    const response = await fetch(`${process.env.WEB_URL}/api/blog/get-all-blogs`, {
         method: 'GET',
         cache: "no-store"
     })
