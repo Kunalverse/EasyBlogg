@@ -1,7 +1,7 @@
 import BlogDetailsComponent from "@/components/blog/details";
 
 async function fetchBlogDetails(blogId){
-    const res = await fetch(`${process.env.WEB_URL}/api/blog/blog-details?id=${blogId}`,{
+    const res = await fetch(`https://easy-blogg-nzty.vercel.app/api/blog/blog-details?id=${blogId}`,{
         method: 'GET',
         cache: 'no-store'
     })
