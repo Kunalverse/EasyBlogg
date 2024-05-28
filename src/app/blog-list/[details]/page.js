@@ -15,6 +15,9 @@ async function fetchBlogDetails(blogId){
 export default async function BlogDetails({params}){
     const {details} = params
 
+    console.log("================================")
+    console.log("details id : " + details)
+
     const blogDetails = await fetchBlogDetails(details)
     console.log("================================")
     console.log("blogDetails : " + blogDetails)
