@@ -14,7 +14,7 @@ export default function AddBlog() {
   const router = useRouter()
 
   async function handleAddBlog(){
-    const response = await fetch('/api/blog/add-new-blog', {
+    const response = await fetch('https://easy-blogg-nzty.vercel.app/api/blog/add-new-blog', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

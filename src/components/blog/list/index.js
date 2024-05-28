@@ -12,7 +12,7 @@ export default function BlogListComponent({getAllBlogs}){
     },[])
 
     async function handleDeleteButton(blogId){
-        const response = await fetch(`/api/blog/delete-blog?id=${blogId}`,{
+        const response = await fetch(`https://easy-blogg-nzty.vercel.app/api/blog/delete-blog?id=${blogId}`,{
             method: "DELETE",
         })
 
