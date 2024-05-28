@@ -16,6 +16,8 @@ export default async function BlogDetails({params}){
     const {details} = params
 
     const blogDetails = await fetchBlogDetails(details)
+    console.log("================================")
+    console.log("blogDetails : " + blogDetails)
 
     return <div>
         <BlogDetailsComponent blogDetails={blogDetails}/>

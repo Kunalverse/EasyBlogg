@@ -18,6 +18,9 @@ export default function BlogListComponent({getAllBlogs}){
 
         const data = await response.json()
 
+        console.log("================================================")
+        console.log("Data: " + data)
+
         if(data?.success){
             router.refresh()
         }
