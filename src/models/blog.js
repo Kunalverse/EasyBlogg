@@ -1,11 +1,13 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
-const BloggSchema = new mongoose.Schema({
+const BloggSchema = new mongoose.Schema(
+  {
     title: String,
     description: String,
+  },
+  { timestamp: true }
+);
 
-}, {timestamp: true})
+const Blog = mongoose.models.Blogs || mongoose.model("Blogs", BloggSchema);
 
-const Blog = mongoose.models.Blogs || mongoose.model("Blogs", BloggSchema)
-
-export default Blog
+export default Blog;

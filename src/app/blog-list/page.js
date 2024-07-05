@@ -1,24 +1,25 @@
 import BlogListComponent from "@/components/blog/list";
 
+async function fetchAllBlogs() {
+  const response = await fetch(
+    "https://easy-blogg-nzty.vercel.app/api/blog/get-all-blogs",
+    {
+      method: "GET",
+      cache: "no-store",
+    }
+  );
 
-async function fetchAllBlogs(){
-    const response = await fetch('https://easy-blogg-nzty.vercel.app/api/blog/get-all-blogs', {
-        method: 'GET',
-        cache: "no-store"
-    })
+  const result = await response.json();
 
-    const result = await response.json()
-
-    // console.log(result.data);
-
-    if(result?.success) return result.data
+  if (result?.success) return result.data;
 }
 
-export default async function BlogList(){
+export default async function BlogList() {
+  const getAllBlogs = await fetchAllBlogs();
 
-    const getAllBlogs = await fetchAllBlogs()
-
-    return <div>
-        <BlogListComponent getAllBlogs={getAllBlogs}/>
+  return (
+    <div>
+      <BlogListComponent getAllBlogs={getAllBlogs} />
     </div>
+  );
 }
