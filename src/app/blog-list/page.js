@@ -9,6 +9,8 @@ async function fetchAllBlogs(){
 
     const result = await response.json()
 
+    console.log(result.data);
+
     if(result?.success) return result.data
 }
 

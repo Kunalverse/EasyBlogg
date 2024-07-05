@@ -23,6 +23,8 @@ export default function AddBlog() {
     })
 
     const result = await response.json()
+    console.log("================================================")
+    console.log("result: " + result)
 
     if(result?.success){
       setBlogFormData(initialFormData)

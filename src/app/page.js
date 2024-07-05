@@ -6,10 +6,10 @@ export default function Home() {
   const router = useRouter()
   return (
     <main className="flex min-h-screen flex-col items-center p-24">
-      <h1 class="text-2xl font-medium">Easy Blogg</h1>
-      <div class = "flex items-center justify-around p-10">
-        <button class="mx-5 bg-black text-white p-3 rounded-md font-medium" onClick={() => router.push('/blog-list')}>Visit all blogs</button>
-        <button class="mx-5 bg-black text-white p-3 rounded-md font-medium" onClick={() => router.push('/add-blog')}>Add new blog</button>
+      <h1 className="text-2xl font-medium">Easy Blogg</h1>
+      <div className= "flex items-center justify-around p-10">
+        <button className="mx-5 bg-black text-white p-3 rounded-md font-medium" onClick={() => router.push('/blog-list')}>Visit all blogs</button>
+        <button className="mx-5 bg-black text-white p-3 rounded-md font-medium" onClick={() => router.push('/add-blog')}>Add new blog</button>
       </div>
     </main>
   );
