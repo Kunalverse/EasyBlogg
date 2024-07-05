@@ -2,11 +2,13 @@ import connectToDB from "@/database"
 import Blog from "@/models/blog"
 import { NextResponse } from "next/server"
 
+export const dynamic = 'force-dynamic';
 export async function GET(){
     try {
         await connectToDB();
 
         const blogData = await Blog.find({});
+        console.log("Here => " + blogData)
 
         if (blogData && blogData.length) {
             return NextResponse.json({
