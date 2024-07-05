@@ -8,7 +8,6 @@ export async function GET(){
         await connectToDB();
 
         const blogData = await Blog.find({});
-        console.log("Here => " + blogData)
 
         if (blogData && blogData.length) {
             return NextResponse.json({
@@ -34,7 +33,6 @@ export async function GET(){
             });
         }
     } catch (e) {
-        console.log(e);
 
         return NextResponse.json({
             success: false,
